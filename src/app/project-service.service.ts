@@ -122,6 +122,11 @@ export class ProjectServiceService {
     this.router.navigate(['/']);
   }
 
+  sample()
+  {
+    
+  }
+
 }
 
 // --proxy-config proxy.conf.json
