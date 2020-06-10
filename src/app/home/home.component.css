@@ -1,0 +1,56 @@
+.filterdiv
+{
+    width: 50%;
+    padding: 2% 0%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.creatediv
+{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5%;
+    width: 50%;
+}
+
+/* td
+{
+    padding:2%;
+} */
+
+.table thead tr td 
+{
+    color : goldenrod;
+}
+
+.table tbody tr td
+{
+    color : white;
+}
+
+.creatediv > label
+{
+    color:goldenrod;
+}
+
+select
+{
+    border: none;
+    border-bottom: 1.5px solid #8BC34A;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    width: 50%;
+}
+
+.creatediv > input 
+{
+    border: 1.5px solid #dcddbc;
+    border-top-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+
+.creatediv > label
+{
+    width: 50%;
+}

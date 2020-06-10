@@ -1,0 +1,133 @@
+<div>
+    <div style="color: snow;background: slategray;padding:1%;display: flex;justify-content: space-between;">
+       <div>Demo-App</div>
+       <div (click)="logout()" style="padding: 0.2% 1%;background: #484848;color:gold;cursor: pointer;border-radius: 6px;">Logout</div>
+    </div>
+    <div>
+    <div style="display: flex;
+    width: 50%;
+    margin: auto;
+    flex-wrap: wrap;
+    margin-top: 3%;
+    padding: 1% 0%;
+    border-radius: 7px;
+    background: dimgray;
+    color: goldenrod;
+    box-shadow: 2px 2px 5px 2px #68645e;
+">
+    <div class="filterdiv">
+        <label>Location : </label>
+        <select id="locationfilter">
+            <option *ngFor="let k of locationfilter">
+                    {{k}}
+            </option>
+        </select>
+    </div>
+    <div class="filterdiv">
+        <label>Department : </label>
+        <select id="departmentfilter">
+            <option *ngFor="let k of departmentfilter">
+                {{k}}
+        </option>
+        </select>
+    </div>
+    <div class="filterdiv">
+        <label>Category : </label>
+        <select id="categoryfilter">
+            <option *ngFor="let k of categoryfilter">
+                {{k}}
+            </option>
+        </select>
+    </div>
+    <div class="filterdiv">
+        <label>Sub-Category : </label>
+        <select id="subcategoryfilter">
+            <option *ngFor="let k of subcategoryfilter">
+                {{k}}
+            </option>
+        </select>
+    </div>
+    </div>
+
+<div>
+    <div style="margin:auto;text-align: center;" class="filterdiv">
+        <div (click)="getdata()" style="
+    border: 1.5px solid #28a745;
+    width: 13%;
+    padding: 1%;
+    border-radius: 12px;
+    color: #28a745;
+    cursor: pointer;
+">Get Data</div>
+
+<div (click)="createdata()" style="
+border: 1.5px solid #17a2b8;
+padding: 1%;
+border-radius: 12px;
+color: #17a2b8;
+cursor: pointer;
+">New</div>
+    </div>
+</div>
+
+<div id="tablegrid" style="width: 50%;margin: auto;display: none;">
+    <!-- <table *ngIf="sample" class="table table-striped table-bordered table-sm row-border hover" datatable [dtOptions]="dtOptions"> -->
+        <table class="table">
+        <thead style="background: linear-gradient(45deg, #696967, #787878,#666a68);color: white;">
+          <tr>
+            <td>Name</td>
+            <td>Location</td>
+            <td>Department</td>
+            <td>Category</td>
+            <td>SubCategory</td>
+            <td>Delete</td>
+            <td>Edit</td>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let group of tabledata;">
+               <td *ngFor="let count of group;">{{count}}</td>
+               <!-- <td><button (click)="deletedata($event)" class="btn btn-danger">Delete</button></td>
+               <td><button (click)="editdata($event)" class="btn btn-info">Edit</button></td> -->
+
+               <td><img style="cursor: pointer;width: 24px;height: 24px;" (click)="deletedata($event)" src="/assets/trash.png" /></td>
+               <td><img style="cursor: pointer;width: 24px;height: 24px;" (click)="editdata($event)" src="/assets/edit.png" /></td>
+
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+      <div [hidden]="!createnew" style="display: flex;flex-wrap: wrap;width:50%;margin: auto;">
+         <div class="creatediv">
+             <label>Name </label>
+             <input type="text" class="createtext" />
+         </div>
+         <div class="creatediv">
+            <label>Location </label>
+            <input type="text" class="createtext" />
+        </div>
+        <div class="creatediv">
+            <label>Department </label>
+            <input type="text" class="createtext" />
+        </div>
+        <div class="creatediv">
+            <label>Category </label>
+            <input type="text" class="createtext" />
+        </div>
+        <div class="creatediv">
+            <label>SubCategory </label>
+            <input type="text" class="createtext" />
+        </div>
+
+      </div>
+
+      <div [hidden]="!createnew" style="margin: auto;display: flex;justify-content: space-evenly;width:50%;padding-bottom: 5%;">
+        <!-- <button (click)="createrecord()" class="btn btn-warning editcreate">Create</button> -->
+        <div class="editcreate" (click)="createrecord()" style="border: 1.5px solid #a9c75e;padding: 1%;border-radius: 7px;color: #a9c75e;cursor: pointer;">Create</div>
+        <!-- <button (click)="editrecord()" class="btn btn-primary editcreate">Edit</button> -->
+        <div class="editcreate" (click)="editrecord()" style="border: 1.5px solid #6666f2;padding: 1%;color: #6666f2;border-radius: 10px;cursor: pointer;">Edit</div>
+    </div>
+      
+</div>
+</div>
