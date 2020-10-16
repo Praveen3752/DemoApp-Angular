@@ -21,7 +21,9 @@ export class HomeComponent implements OnInit {
 
   dtOptions: DataTables.Settings = {};
 
-  constructor(public service : ProjectServiceService) { }
+  constructor(public service : ProjectServiceService) { 
+    console.log("test");
+  }
 
   ngOnInit() 
   {
