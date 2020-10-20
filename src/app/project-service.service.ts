@@ -19,7 +19,9 @@ export class ProjectServiceService {
   }
   headers = new HttpHeaders();
 
-  constructor(public http:HttpClient,public router : Router) { }
+  constructor(public http:HttpClient,public router : Router) {
+	console.log("service");
+	  }
 
   
   public logindata(username,password)
